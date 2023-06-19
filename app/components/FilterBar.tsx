@@ -197,7 +197,9 @@ export default function FilterBar({ getData }: Props) {
                         }
                     </select>
                 </div>
-                <button type='button' className='px-4 bg-orange-200 rounded hover:bg-orange-300 duration-150' onClick={handleSearch}>Lọc tin</button>
+                <div className='flex flex-col-reverse'>
+                    <button type='button' className='px-4 py-2 bg-orange-200 rounded hover:bg-orange-300 duration-150' onClick={handleSearch}>Lọc tin</button>
+                </div>
             </div>
         </main>
     )
