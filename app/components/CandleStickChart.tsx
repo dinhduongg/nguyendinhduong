@@ -22,6 +22,9 @@ const chartData = [
 
 export default function CandleStickChart() {
     return (
-        <Chart width={'100%'} height={450} chartType='CandlestickChart' loader={<div>Loading chart</div>} data={chartData} options={{ legend: 'none' }} rootProps={{ 'data-testid': '1' }} />   
+        <>
+            <h1 className='text-center text-3xl'>Candle stick chart</h1>
+            <Chart width={'100%'} height={450} chartType='CandlestickChart' loader={<div>Loading chart</div>} data={chartData} options={{ legend: 'none' }} rootProps={{ 'data-testid': '1' }} />   
+        </>
     )
 }

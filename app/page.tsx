@@ -71,7 +71,7 @@ export default function Home() {
         }
         { datas.length === 0 && <div className='border p-4'>Không có kết quả được tìm thấy</div> }
       </div>
-      <div>
+      <div className='mt-10'>
         <CandleStickChart />
       </div>
     </div>

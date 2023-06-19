@@ -20,8 +20,8 @@ type Props = {
 export default function ResultItem({ result }: Props) {
   return (
     <div className='flex items-center space-x-4 border p-2 text-base bg-red-50'>
-        <div>
-            <Image src={result.thumbnail} alt={result.title} width={450} height={200} />
+        <div className='w-[450px] h-[200px]'>
+            <Image src={result.thumbnail} alt={result.title} width={450} height={100} className='w-full h-full object-cover' />
         </div>
         <div className='space-y-1'>
             <h1 className='text-red-500 font-bold'>{result.title}</h1>
