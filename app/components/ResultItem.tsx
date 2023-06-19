@@ -25,7 +25,7 @@ export default function ResultItem({ result }: Props) {
         </div>
         <div className='space-y-1'>
             <h1 className='text-red-500 font-bold'>{result.title}</h1>
-            <p className='text-green-500 font-semibold'>{result.price} triệu/tháng</p>
+            <p className='text-green-500 font-semibold'>{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(result.price)} / tháng</p>
             <p className='text-gray-500'>Diện tích <span className='text-black font-bold'>{result.area}m2</span></p>
             <p className='text-gray-500'>{result.content}</p>
         </div>

@@ -34,25 +34,30 @@ export default function Home() {
 
   const getData = (value: searchValue) => {
     let newData = data
-    if (value.cityCode !== 'default' || value.acreage.to !== 0 || value.price.to !== 0 || value.wardCode !== 'default') {
-      if (value.cityCode) {
+    console.log(newData);
+    // if (value.cityCode !== 'default' || value.acreage.to !== 0 || value.price.to !== 0 || value.wardCode !== 'default') {
+      if (value.cityCode && value.cityCode !== 'default') {
         newData = newData.filter(data => data.city === value.cityCode.toString())
       }
 
-      if (value.wardCode) {
+      if (value.wardCode && value.wardCode !== 'default') {
         newData = newData.filter(data => data.district === value.wardCode.toString())
       }
 
-      if (value.price) {
-        newData = newData.filter(data => value.price.from < data.price && data.price < value.price.to)
+      if (value.price && value.price.to !== 0) {
+        newData = newData.filter(data => value.price.from <= data.price && data.price <= value.price.to)
       }
 
-      if (value.acreage) {
-        newData = newData.filter(data => value.acreage.from < data.area && data.area < value.acreage.to)
+      if (value.acreage && value.acreage.to !== 0) {
+        newData = newData.filter(data => value.acreage.from <= data.area && data.area <= value.acreage.to)
       }
-    }
+    // }
 
+    console.log(newData);
+    console.log(value);
     setDatas(newData)
+    
+    
   }
 
   return (
